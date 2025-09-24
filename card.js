@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageForm.reset();
     });
     
-     Handle form submission
+     //Handle form submission
     messageForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const subject = document.getElementById('subject').value;
         const message = document.getElementById('message').value;
         
-         Here you would typically send the data to a server
+        // Here you would typically send the data to a server
          For this example, we'll just show an alert and reset the form
         alert(`Thank you, ${name}! Your message has been sent.\n\nWe'll respond to ${email} regarding "${subject}" as soon as possible.`);
         
@@ -48,4 +48,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
 
