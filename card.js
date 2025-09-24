@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.classList.add('active');
     });
     
-     Hide contact form when cancel button is clicked
+     //Hide contact form when cancel button is clicked
     cancelBtn.addEventListener('click', function() {
         contactForm.classList.remove('active');
         messageForm.reset();
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     messageForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-         Get form values
+        // Get form values
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const subject = document.getElementById('subject').value;
@@ -48,3 +48,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
