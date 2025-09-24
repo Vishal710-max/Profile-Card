@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtn = document.getElementById('cancelBtn');
     const messageForm = document.getElementById('messageForm');
     
-     Show contact form when contact button is clicked
+     //Show contact form when contact button is clicked
     contactBtn.addEventListener('click', function() {
         contactForm.classList.add('active');
     });
@@ -46,4 +46,5 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.background = 'rgba(255, 255, 255, 0.1)';
         });
     });
+
 });
