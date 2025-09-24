@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = document.getElementById('message').value;
         
         // Here you would typically send the data to a server
-         For this example, we'll just show an alert and reset the form
+         //For this example, we'll just show an alert and reset the form
         alert(`Thank you, ${name}! Your message has been sent.\n\nWe'll respond to ${email} regarding "${subject}" as soon as possible.`);
         
         // Reset form and hide it
@@ -48,5 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
 
 
