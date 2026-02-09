@@ -3,83 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishal Bhingarde - Web Developer</title>
+    <meta name="description" content="Vishal Bhingarde - Full Stack Web Developer specializing in React, JavaScript, and modern web technologies">
+    <meta name="keywords" content="Web Developer, Full Stack, React, JavaScript, Portfolio">
+    <meta name="author" content="Vishal Bhingarde">
+    <meta property="og:title" content="Vishal Bhingarde - Web Developer">
+    <meta property="og:description" content="Full Stack Web Developer | React | JavaScript | Java">
+    <meta property="og:type" content="website">
+    
+    <title>Vishal Bhingarde - Full Stack Web Developer</title>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="profile-card">
-        <div class="left-section">
+        <!-- Left Section -->
+        <aside class="left-section">
             <div class="profile-image">
-                <img src="your-photo.jpg" alt="Vishal Bhingarde" class="profile-photo">
+                <img src="your-photo.jpg" alt="Vishal Bhingarde - Web Developer" class="profile-photo">
+                <div class="status-indicator" title="Available for work"></div>
             </div>
+            
             <h1 class="name">Vishal Bhingarde</h1>
-            <p class="title">Web Developer</p>
+            <p class="title">Full Stack Web Developer</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Solapur, India</p>
             
             <div class="stats">
                 <div class="stat">
-                    <div class="stat-number">5+</div>
+                    <div class="stat-number" data-target="5">0</div>
                     <div class="stat-label">Projects</div>
                 </div>
+                <div class="stat-divider"></div>
                 <div class="stat">
-                    <div class="stat-number">10+</div>
+                    <div class="stat-number" data-target="10">0</div>
                     <div class="stat-label">Certificates</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">Years Exp</div>
                 </div>
             </div>
 
-            <button class="contact-btn" id="contactBtn">Contact Me</button>
+            <button class="contact-btn" id="contactBtn" aria-label="Open contact form">
+                <i class="fas fa-envelope"></i>
+                <span>Contact Me</span>
+            </button>
 
-            <div class="contact-form" id="contactForm">
-                <h3>Send Message</h3>
-                <form id="messageForm">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <input type="text" id="subject" placeholder="Subject" required>
-                    <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
-                    <button type="submit" class="submit-btn">Send</button>
-                    <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
-                </form>
+            <div class="quick-links">
+                <a href="/assets/resume/Vishal_resume.pdf" class="quick-link" title="Download Resume">
+                    <i class="fas fa-download"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="https://portfolio-sect.vercel.app/" class="quick-link" title="View Portfolio" target="_blank" rel="noopener">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Portfolio</span>
+                </a>
             </div>
-        </div>
 
-        <div class="right-section">
-            <h2 class="section-title">About Me</h2>
-            <p class="about">
-                Hi 👋 I'm Vishal. I build efficient, responsive, and visually clean full-stack web applications that focus on performance and user experience.
-            </p>
-
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-                <div class="skill">Java</div>
-                <div class="skill">C/C++</div>
-                <div class="skill">Python</div>
-                <div class="skill">Oracle DB</div>
-                <div class="skill">MySQL</div>
+            <!-- Contact Form Modal -->
+            <div class="contact-form" id="contactForm" role="dialog" aria-labelledby="contactFormTitle" aria-hidden="true">
+                <div class="contact-form-content">
+                    <button class="close-btn" id="closeBtn" aria-label="Close contact form">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <h3 id="contactFormTitle">
+                        <i class="fas fa-paper-plane"></i>
+                        Send a Message
+                    </h3>
+                    <form id="messageForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Full Name
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Subject
+                            </label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment"></i>
+                                Message
+                            </label>
+                            <textarea id="message" name="message" placeholder="Your message here..." rows="5" required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                            <button type="button" class="cancel-btn" id="cancelBtn">
+                                <i class="fas fa-times"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
+        </aside>
+
+        <!-- Right Section -->
+        <main class="right-section">
+            <section class="about-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user-circle"></i>
+                    About Me
+                </h2>
+                <p class="about">
+                    Hi 👋 I'm Vishal, a passionate <strong>Full Stack Web Developer</strong> specializing in building efficient, 
+                    responsive, and visually appealing web applications. I focus on delivering exceptional user experiences 
+                    through clean code and modern technologies.
+                </p>
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Clean & Maintainable Code</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Responsive Design Expert</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Performance Optimization</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills-section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Technical Skills
+                </h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title">Frontend</h3>
+                        <div class="skills-grid">
+                            <div class="skill" data-level="90">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill" data-level="85">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill" data-level="88">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill" data-level="82">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 82%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Backend</h3>
+                        <div class="skills-grid">
+                            <div class="skill" data-level="80">
+                                <i class="fab fa-java"></i>
+                                <span>Java</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill" data-level="75">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill" data-level="70">
+                                <i class="fas fa-copyright"></i>
+                                <span>C/C++</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Database</h3>
+                        <div class="skills-grid">
+                            <div class="skill" data-level="78">
+                                <i class="fas fa-database"></i>
+                                <span>Oracle DB</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <div class="skill" data-level="80">
+                                <i class="fas fa-database"></i>
+                                <span>MySQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <div class="quote">
-                “Good code is clean and self-explanatory.”
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p>"Good code is clean and self-explanatory."</p>
+                <i class="fas fa-quote-right quote-icon"></i>
             </div>
 
-            <div class="social-links">
-                <a href="https://linkedin.com/in/vishal-bhingarde-bb23a2376" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Vishal710-max" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
+            <section class="connect-section">
+                <h2 class="section-title">
+                    <i class="fas fa-share-alt"></i>
+                    Let's Connect
+                </h2>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/vishal-bhingarde-bb23a2376" 
+                       class="social-link linkedin" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Connect on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Vishal710-max" 
+                       class="social-link github" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="View GitHub Profile">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://wa.me/9970957409" 
+                       class="social-link whatsapp"
+                       aria-label="Chat on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+                
+                <div class="email-display">
+                    <i class="fas fa-at"></i>
+                    <a href="mailto:bhingardevishal5@gmail.com">bhingardevishal5@gmail.com</a>
+                </div>
+            </section>
 
-            <div class="email">📧 bhingardevishal5@gmail.com</div>
-        </div>
+            <footer class="footer">
+                <p>&copy; 2025 Vishal Bhingarde. All rights reserved.</p>
+                <p class="made-with">Made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i></p>
+            </footer>
+        </main>
     </div>
 
-    <script src="card.js"></script>
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+        <!-- EmailJS SDK -->
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+            (function () {
+                emailjs.init("0644IYHGUt6ZTMMJW");
+            })();
+        </script>
+        <script src="card.js"></script>
 </body>
 </html>
-
-
