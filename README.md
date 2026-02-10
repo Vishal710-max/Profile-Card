@@ -207,11 +207,12 @@ Perfect for:
 
 ## 📬 Contact
 
-**Vishal** - [@yourhandle](https://twitter.com/yourhandle)
+**Vishal** – [LinkedIn](https://www.linkedin.com/in/vishal-bhingarde-bb23a2376)
 
 Project Link: [https://github.com/Vishal710-max/profile-card](https://github.com/Vishal710-max/profile-card)
 
 ---
+
 
 <div align="center">
 
