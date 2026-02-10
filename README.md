@@ -142,7 +142,7 @@ License
 
 ## 🌐 Demo
 
-Check out a live demo: [**View Demo**](https://profile-card-kohl-one.vercel.app/) *(Add your demo link here)*
+Check out a live demo: [**View Demo**](https://profile-card-kohl-one.vercel.app/) 
 
 
 ## 🛠️ Browser Support
