@@ -142,15 +142,8 @@ License
 
 ## 🌐 Demo
 
-Check out a live demo: [**View Demo**](#) *(Add your demo link here)*
+Check out a live demo: [**View Demo**](https://profile-card-kohl-one.vercel.app/) *(Add your demo link here)*
 
-### Screenshots
-
-| Desktop View | Mobile View |
-|--------------|-------------|
-| ![Desktop](link-to-desktop-screenshot) | ![Mobile](link-to-mobile-screenshot) |
-
----
 
 ## 🛠️ Browser Support
 
